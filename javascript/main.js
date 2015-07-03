@@ -1,10 +1,11 @@
 requirejs.config({
     paths: {
-        jquery: 'jquery'
+        jquery: 'jquery',
+        mytableDataPage : '../lib/mytableDataPage.min'
     }
 });
 
-define(['mytableDataPage.min'],function(tab){
+define(['mytableDataPage'],function(tab){
     var mytable = new tab.mytable();
 
 
