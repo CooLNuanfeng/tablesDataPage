@@ -6,8 +6,59 @@
 	<link rel="stylesheet" href="sass/css/mytableDataPage.css">
 </head>
 <body>
-	
+	<input type="button" value="alert" id="btn">
+	<div id="myTableBox" class="tableContainer">
+		<div class="tableBody">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>NAME</th>
+						<th>AGE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>BLUE</td>
+						<td>23</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>TOM</td>
+						<td>25</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>JACK</td>
+						<td>24</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="tablePage">
+			<select id="">
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="30">30</option>
+				<option value="50">50</option>
+			</select>
+			<div class="table_pages">
+				<a href="javascript:;" class="firstPage">首页</a>
+				<a href="javascript:;" class="prevPage">上一页</a>
+				<a href="javascript:;">1</a>
+				<a href="javascript:;">2</a>
+				<a href="javascript:;">3</a>
+				<a href="javascript:;">4</a>
+				<a href="javascript:;">5</a>
+				<span>...</span>
+				<a href="javascript:;">99</a>
+				<a href="javascript:;" class="nextPage">下一页</a>
+				<a href="javascript:;" class="lastPage">尾页</a>
+			</div>
+		</div>
+	</div>
 </body>
-<script src="javascript/jquery.js"></script>
-<script src="javascript/mytableDataPage.js"></script>
+<script src="javascript/require-2.1.min.js" data-main="javascript/main.js"></script>
 </html>
