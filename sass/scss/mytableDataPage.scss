@@ -12,4 +12,46 @@
 			color: #fff;
 		}
 	}
+	.table_pages{
+		a,span{
+			width: auto;
+			height: 30px;
+			padding: 0 8px;
+			margin: 0 3px;
+			line-height: 30px;
+			text-align: center;
+			display: inline-block;
+			vertical-align: middle;
+			text-decoration: none;
+			color: #000;
+			&.active,&:hover{
+				color: #fff;
+				background: #0cf;
+			}
+		}
+		a.firstPage{
+			background: url(../images/paging.png) -4px 4px no-repeat;
+			&:hover{
+				background-color: none;
+			}
+		}
+		a.prevPage{
+			background: url(../images/paging.png) -4px -18px no-repeat;
+			&:hover{
+				background-color: none;
+			}
+		}
+		a.nextPage{
+			background: url(../images/paging.png) -4px -40px no-repeat;
+			&:hover{
+				background-color: none;
+			}
+		}
+		a.lastPage{
+			background: url(../images/paging.png) -4px -62px no-repeat;
+			&:hover{
+				background-color: none;
+			}
+		}
+	}	
 }

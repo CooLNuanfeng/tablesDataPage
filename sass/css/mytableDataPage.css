@@ -7,3 +7,53 @@
   background: #333;
   color: #fff;
 }
+
+.tableContainer .table_pages a, .tableContainer .table_pages span {
+  width: auto;
+  height: 30px;
+  padding: 0 8px;
+  margin: 0 3px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #000;
+}
+
+.tableContainer .table_pages a.active, .tableContainer .table_pages a:hover, .tableContainer .table_pages span.active, .tableContainer .table_pages span:hover {
+  color: #fff;
+  background: #0cf;
+}
+
+.tableContainer .table_pages a.firstPage {
+  background: url(../images/paging.png) -4px 4px no-repeat;
+}
+
+.tableContainer .table_pages a.firstPage:hover {
+  background-color: none;
+}
+
+.tableContainer .table_pages a.prevPage {
+  background: url(../images/paging.png) -4px -18px no-repeat;
+}
+
+.tableContainer .table_pages a.prevPage:hover {
+  background-color: none;
+}
+
+.tableContainer .table_pages a.nextPage {
+  background: url(../images/paging.png) -4px -40px no-repeat;
+}
+
+.tableContainer .table_pages a.nextPage:hover {
+  background-color: none;
+}
+
+.tableContainer .table_pages a.lastPage {
+  background: url(../images/paging.png) -4px -62px no-repeat;
+}
+
+.tableContainer .table_pages a.lastPage:hover {
+  background-color: none;
+}
