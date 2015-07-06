@@ -6,7 +6,6 @@ define(['jquery','Fzxa'],function($,Fzxa){
 			"data" : [],
 			"rows" : 5
 		};
-		//this.tableHtml = '';
 	}
 
 	Mytable.prototype = {
@@ -44,14 +43,15 @@ define(['jquery','Fzxa'],function($,Fzxa){
 			this.renderSelectPage($box);
 			this.renderPage($box);
 		},
+		
 		//渲染表格
 		renderTable : function($obj){
 
-			var pages = this.getPagesSum();
 			var tableHtml ="";
 
 			$obj.find('.tableBody').html(tableHtml);
 		},
+
 		//渲染筛选页数
 		renderSelectPage : function($obj){
 			var rows = this.options.rows;
@@ -68,53 +68,21 @@ define(['jquery','Fzxa'],function($,Fzxa){
 			
 			$obj.find('.selectPage').html(html);
 		},
+
 		//渲染分页部分
 		renderPage : function($obj){
-			console.log(Fzxa.Fzxa.Pager);
-			 var pager = Fzxa.Fzxa.Pager('table_pages');
-			    pager.itemCount = 200;
-			    pager.size = 10;
-			    pager.index = 1;
-			    pager.onclick = function(index){
-			        Fzxa('#test').html('<ul><li>第'+index+'页内容</li></ul>');
-			    };
-			    if(pager.itemCount > 10){
-			        pager.render();
-			    }
-			// var pages = this.getPagesSum()+1;
-			// var pageNow = 1;
-			// var pageHtml='<a href="javascript:;" class="firstPage"></a><a href="javascript:;" class="prevPage"></a>';
-
-			// if(pages>6){
-			// 	pageHtml+='<a href="javascript:;" class="active page_row">1</a><a href="javascript:;" class="page_row">2</a><a href="javascript:;" class="page_row">3</a><a href="javascript:;" class="page_row">4</a><a href="javascript:;" class="page_row">5</a><span>...</span><a href="javascript:;" class="page_row">'+pages+'</a>';	
-			// }else{				
-			// 	for(var i=1; i<=pages;i++){
-			// 		if(i==pageNow){
-			// 			pageHtml+='<a href="javascript:;" class="active page_row">'+i+'</a>';
-			// 		}else{
-			// 			pageHtml+='<a href="javascript:;" class="page_row">'+i+'</a>';
-			// 		}					
-			// 	}			
-			// }
-			// pageHtml+='<a href="javascript:;" class="nextPage"></a><a href="javascript:;" class="lastPage"></a>';
-			// $obj.find('.table_pages').html(pageHtml);
-
-			// this.pageEvent($obj);	
+			console.log(Fzxa);
+			var pager = Fzxa.Pager('table_pages');
+			   pager.itemCount = 20;
+			   pager.size = 10;
+			   pager.index = 1;
+			   pager.onclick = function(index){
+			   	alert(index);
+			   };
+			   if(pager.itemCount > 10){
+			       pager.render();
+			   }
 		},
-
-		//分页按钮相关交互
-		pageEvent : function($obj){
-			$obj.find('.table_pages').on('click','.page_row',function(){
-				$(this).addClass('active').siblings('a').removeClass('active');
-			})
-		},
-
-		//计算每页应显示的行数或个数
-		getPagesSum : function(){
-			var sum = Math.floor(this.options.data.length/this.options.rows);
-
-			return sum;
-		}
 
 	}
 

@@ -11,10 +11,10 @@ define(function(){
        this.pageCount = 0;     // 总页数
         
        this.zh = {
-           'pre' : '上一页',  // 上一页
-           'next' : '下一页', // 下一页
-           'start': '首页',       // 首页
-           'end'  : '末页'            // 末页
+           'pre' : '',  // 上一页
+           'next' : '', // 下一页
+           'start': '', // 首页
+           'end'  : ''  // 末页
        };
         
        /**
@@ -61,11 +61,11 @@ define(function(){
            str += "<div class=\"fzxa-page\">\n";
            if (self.pageCount > 1) {
                if (self.index != 1) {
-                   str += '<a href="javascript://1">'+this.zh.start+'</a>';
-                   str += '<a href="javascript://' + (self.index - 1) + '" class="pre"><em class="border_t"></em>'+this.zh.pre+'</a>';
+                   str += '<a href="javascript://1" class="firstPage">'+this.zh.start+'</a>';
+                   str += '<a href="javascript://' + (self.index - 1) + '" class="prevPage"><em class="border_t"></em>'+this.zh.pre+'</a>';
                } else {
-                   str += '<span>'+this.zh.start+'</span>';
-                   str += '<span>'+this.zh.pre+'</span>';
+                   str += '<span class="firstPage">'+this.zh.start+'</span>';
+                   str += '<span class="prevPage">'+this.zh.pre+'</span>';
                }
            }
            for (var i = start; i <= end; i++) {
@@ -77,11 +77,11 @@ define(function(){
            }
            if (self.pageCount > 1) {
                if (self.index != self.pageCount) {
-                   str += '<a href="javascript://' + (self.index + 1) + '" class="next">'+this.zh.next+'<em class="border_t"></em></a>';
-                   str += '<a href="javascript://' + self.pageCount + '">'+this.zh.end+'</a>';
+                   str += '<a href="javascript://' + (self.index + 1) + '" class="nextPage">'+this.zh.next+'<em class="border_t"></em></a>';
+                   str += '<a href="javascript://' + self.pageCount + '" class="lastPage">'+this.zh.end+'</a>';
                } else {
-                   str += '<span class="next">'+this.zh.next+'</span>';
-                   str += '<span>'+this.zh.end+'</span>';
+                   str += '<span class="nextPage">'+this.zh.next+'</span>';
+                   str += '<span class="lastPage">'+this.zh.end+'</span>';
                }
            }
            //str += ' 一共' + self.pageCount + '页, ' + self.itemCount + '条记录 ';
@@ -105,7 +105,5 @@ define(function(){
 	    return new Pager(id);
 	};
    
-    return {
-   		Fzxa : Fzxa	
-    }
+    return Fzxa;
 })

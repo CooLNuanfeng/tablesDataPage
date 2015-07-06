@@ -24,30 +24,30 @@
 			vertical-align: middle;
 			text-decoration: none;
 			color: #000;
-			&.active,&:hover{
+			&.cur{
 				color: #fff;
 				background: #0cf;
 			}
 		}
-		a.firstPage{
+		.firstPage{
 			background: url(../images/paging.png) -4px 4px no-repeat;
 			&:hover{
 				background-color: none;
 			}
 		}
-		a.prevPage{
+		.prevPage{
 			background: url(../images/paging.png) -4px -18px no-repeat;
 			&:hover{
 				background-color: none;
 			}
 		}
-		a.nextPage{
+		.nextPage{
 			background: url(../images/paging.png) -4px -40px no-repeat;
 			&:hover{
 				background-color: none;
 			}
 		}
-		a.lastPage{
+		.lastPage{
 			background: url(../images/paging.png) -4px -62px no-repeat;
 			&:hover{
 				background-color: none;

@@ -1,4 +1,5 @@
 requirejs.config({
+    urlArgs: "bust=" + (new Date()).getTime(), //阻止缓存
     paths: {
         jquery: 'jquery',
         Fzxa :'Fzxa.page'

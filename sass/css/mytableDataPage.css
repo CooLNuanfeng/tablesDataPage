@@ -21,39 +21,39 @@
   color: #000;
 }
 
-.tableContainer .table_pages a.active, .tableContainer .table_pages a:hover, .tableContainer .table_pages span.active, .tableContainer .table_pages span:hover {
+.tableContainer .table_pages a.cur, .tableContainer .table_pages span.cur {
   color: #fff;
   background: #0cf;
 }
 
-.tableContainer .table_pages a.firstPage {
+.tableContainer .table_pages .firstPage {
   background: url(../images/paging.png) -4px 4px no-repeat;
 }
 
-.tableContainer .table_pages a.firstPage:hover {
+.tableContainer .table_pages .firstPage:hover {
   background-color: none;
 }
 
-.tableContainer .table_pages a.prevPage {
+.tableContainer .table_pages .prevPage {
   background: url(../images/paging.png) -4px -18px no-repeat;
 }
 
-.tableContainer .table_pages a.prevPage:hover {
+.tableContainer .table_pages .prevPage:hover {
   background-color: none;
 }
 
-.tableContainer .table_pages a.nextPage {
+.tableContainer .table_pages .nextPage {
   background: url(../images/paging.png) -4px -40px no-repeat;
 }
 
-.tableContainer .table_pages a.nextPage:hover {
+.tableContainer .table_pages .nextPage:hover {
   background-color: none;
 }
 
-.tableContainer .table_pages a.lastPage {
+.tableContainer .table_pages .lastPage {
   background: url(../images/paging.png) -4px -62px no-repeat;
 }
 
-.tableContainer .table_pages a.lastPage:hover {
+.tableContainer .table_pages .lastPage:hover {
   background-color: none;
 }
