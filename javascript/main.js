@@ -1,6 +1,7 @@
 requirejs.config({
     paths: {
         jquery: 'jquery',
+        Fzxa :'Fzxa.page'
         //mytableDataPage : '../lib/mytableDataPage.min'
     }
 });

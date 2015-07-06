@@ -1,4 +1,4 @@
-define(['jquery'],function($){
+define(['jquery','Fzxa'],function($,Fzxa){
 	
 	function Mytable(){
 		this.options = {
@@ -34,7 +34,7 @@ define(['jquery'],function($){
 								"<option value=\"30\">30</option>" +
 								"<option value=\"50\">50</option>" +
 							"</select>" +
-							"<div class=\"table_pages\">" +
+							"<div id='table_pages' class=\"table_pages\">" +
 							"</div>" +
 						"</div>";
 
@@ -70,25 +70,36 @@ define(['jquery'],function($){
 		},
 		//渲染分页部分
 		renderPage : function($obj){
-			var pages = this.getPagesSum()+1;
-			var pageNow = 1;
-			var pageHtml='<a href="javascript:;" class="firstPage"></a><a href="javascript:;" class="prevPage"></a>';
+			console.log(Fzxa.Fzxa.Pager);
+			 var pager = Fzxa.Fzxa.Pager('table_pages');
+			    pager.itemCount = 200;
+			    pager.size = 10;
+			    pager.index = 1;
+			    pager.onclick = function(index){
+			        Fzxa('#test').html('<ul><li>第'+index+'页内容</li></ul>');
+			    };
+			    if(pager.itemCount > 10){
+			        pager.render();
+			    }
+			// var pages = this.getPagesSum()+1;
+			// var pageNow = 1;
+			// var pageHtml='<a href="javascript:;" class="firstPage"></a><a href="javascript:;" class="prevPage"></a>';
 
-			if(pages>6){
-				pageHtml+='<a href="javascript:;" class="active page_row">1</a><a href="javascript:;" class="page_row">2</a><a href="javascript:;" class="page_row">3</a><a href="javascript:;" class="page_row">4</a><a href="javascript:;" class="page_row">5</a><span>...</span><a href="javascript:;" class="page_row">'+pages+'</a>';	
-			}else{				
-				for(var i=1; i<=pages;i++){
-					if(i==pageNow){
-						pageHtml+='<a href="javascript:;" class="active page_row">'+i+'</a>';
-					}else{
-						pageHtml+='<a href="javascript:;" class="page_row">'+i+'</a>';
-					}					
-				}			
-			}
-			pageHtml+='<a href="javascript:;" class="nextPage"></a><a href="javascript:;" class="lastPage"></a>';
-			$obj.find('.table_pages').html(pageHtml);
+			// if(pages>6){
+			// 	pageHtml+='<a href="javascript:;" class="active page_row">1</a><a href="javascript:;" class="page_row">2</a><a href="javascript:;" class="page_row">3</a><a href="javascript:;" class="page_row">4</a><a href="javascript:;" class="page_row">5</a><span>...</span><a href="javascript:;" class="page_row">'+pages+'</a>';	
+			// }else{				
+			// 	for(var i=1; i<=pages;i++){
+			// 		if(i==pageNow){
+			// 			pageHtml+='<a href="javascript:;" class="active page_row">'+i+'</a>';
+			// 		}else{
+			// 			pageHtml+='<a href="javascript:;" class="page_row">'+i+'</a>';
+			// 		}					
+			// 	}			
+			// }
+			// pageHtml+='<a href="javascript:;" class="nextPage"></a><a href="javascript:;" class="lastPage"></a>';
+			// $obj.find('.table_pages').html(pageHtml);
 
-			this.pageEvent($obj);	
+			// this.pageEvent($obj);	
 		},
 
 		//分页按钮相关交互
