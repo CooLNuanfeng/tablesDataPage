@@ -21,7 +21,7 @@ define(function(){
 		constructor: 'Pager',
 		onclick :  function (index) {},
 		_onclick : function (index) {
-		   var self = this;
+		    var self = this;
            self.index = index;
            self.onclick(index);
            self.render();
@@ -41,7 +41,7 @@ define(function(){
         * 渲染分页控件.
         */
         render : function () {
-        	  var self = this;
+        	    var self = this;
               if (self.id != undefined) {
                   var div = document.getElementById(self.id);
                   div.view = self;
@@ -92,9 +92,9 @@ define(function(){
                       }
                       return false;
                   };
-               }
+              }
         }
-	};
+	  };
    
     return Pager;
 })

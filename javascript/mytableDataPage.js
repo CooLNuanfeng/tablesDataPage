@@ -132,6 +132,9 @@ define(['jquery','Pager'],function($,Pager){
 
 		mytab.init(id,json);
 
+		// mytab.init = function(id,json){
+		// 	alert('complied');
+		// };
 		return mytab;
 	}
 

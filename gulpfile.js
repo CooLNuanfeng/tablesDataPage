@@ -20,7 +20,7 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('compress', function() {
-  return gulp.src('javascript/mytableDataPage.js')
+  return gulp.src(['javascript/mytableDataPage.js','javascript/Fzxa.page.js'])
     .pipe(uglify())
     .pipe(rename({
       extname: '.min.js'
