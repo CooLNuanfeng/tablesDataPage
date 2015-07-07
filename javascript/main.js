@@ -7,7 +7,7 @@ requirejs.config({
     }
 });
 
-define(['mytableDataPage'],function(t){
+require(['mytableDataPage'],function(t){
 
     var mytable = t.mytable("myTableBox",{
     	theader : [
@@ -26,6 +26,7 @@ define(['mytableDataPage'],function(t){
     		{"userid":8,"username":'blue',"userage":23},
     		{"userid":9,"username":'blue',"userage":23},
     		{"userid":10,"username":'blue',"userage":23},
+            {"userid":11,"username":'blue',"userage":23},
     		{"userid":12,"username":'blue',"userage":23},
     		{"userid":13,"username":'blue',"userage":23},
     		{"userid":14,"username":'blue',"userage":23},
